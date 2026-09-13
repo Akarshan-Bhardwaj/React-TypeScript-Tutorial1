@@ -4,6 +4,7 @@ import { MyCard } from "./components/MyCard.tsx";
 
 import type { MenuProps } from "./types/types.ts";
 import { MenuList } from "./components/MenuList.tsx";
+import { OrderForm } from "./components/OrderForm.tsx";
 
 const menuItems: MenuProps[] = [
   { id: 1, name: "Espresso", price: 2500 },
@@ -24,6 +25,11 @@ function App() {
       </div>
       <div>
         <MenuList items={menuItems} />
+      </div>
+      <div>
+        <OrderForm
+          onSubmit={(order) => console.log("Placed:", order.name, order.cups)}
+        />
       </div>
     </>
   );
